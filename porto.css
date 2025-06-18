@@ -7,7 +7,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #f1f5f9;
+    background-color: #0f172a;
     scroll-behavior: smooth;
 }
 
@@ -23,9 +24,9 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
@@ -45,7 +46,7 @@ body {
 }
 
 .navbar.scrolled .logo {
-    color: #1f2937;
+    color: #f8fafc;
 }
 
 .nav-links {
@@ -62,11 +63,11 @@ body {
 }
 
 .navbar.scrolled .nav-links a {
-    color: #374151;
+    color: #f8fafc;
 }
 
 .nav-links a:hover {
-    color: #3b82f6;
+    color: #60a5fa;
 }
 
 .mobile-menu {
@@ -79,7 +80,7 @@ body {
 }
 
 .navbar.scrolled .mobile-menu {
-    color: #1f2937;
+    color: #f8fafc;
 }
 
 /* Hero Section */
@@ -99,7 +100,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
     background-size: 14px 24px;
@@ -167,7 +168,7 @@ body {
 /* Projects Section */
 .projects {
     padding: 5rem 2rem;
-    background: #f8fafc;
+    background: #1e293b;
 }
 
 .container {
@@ -183,13 +184,13 @@ body {
 .section-title h2 {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
-    color: #1f2937;
+    color: #f1f5f9;
     margin-bottom: 1rem;
 }
 
 .section-title p {
     font-size: 1.25rem;
-    color: #6b7280;
+    color: #cbd5e1;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -201,16 +202,17 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: #1e293b;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
+    color: #f1f5f9;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .project-image {
@@ -250,7 +252,7 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 50%;
     color: white;
@@ -259,7 +261,7 @@ body {
 }
 
 .project-link:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .project-content {
@@ -269,12 +271,12 @@ body {
 .project-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #f8fafc;
     margin-bottom: 0.75rem;
 }
 
 .project-content p {
-    color: #6b7280;
+    color: #cbd5e1;
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -287,8 +289,8 @@ body {
 
 .tech-tag {
     padding: 0.25rem 0.75rem;
-    background: #dbeafe;
-    color: #1e40af;
+    background: #334155;
+    color: #93c5fd;
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 500;
@@ -297,7 +299,8 @@ body {
 /* About Section */
 .about {
     padding: 5rem 2rem;
-    background: white;
+    background: #0f172a;
+    color: #f1f5f9;
 }
 
 .about-content {
@@ -310,13 +313,13 @@ body {
 .about-text h2 {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
-    color: #1f2937;
+    color: #f8fafc;
     margin-bottom: 1.5rem;
 }
 
 .about-text p {
     font-size: 1.125rem;
-    color: #6b7280;
+    color: #cbd5e1;
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
@@ -345,13 +348,14 @@ body {
 
 .skill-card {
     padding: 1.5rem;
-    background: #f8fafc;
+    background: #1e293b;
     border-radius: 1rem;
     transition: background 0.3s ease;
+    color: #f1f5f9;
 }
 
 .skill-card:hover {
-    background: #f1f5f9;
+    background: #334155;
 }
 
 .skill-icon {
@@ -363,18 +367,18 @@ body {
 .skill-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #f8fafc;
     margin-bottom: 0.5rem;
 }
 
 .skill-card p {
-    color: #6b7280;
+    color: #cbd5e1;
 }
 
 /* Contact Section */
 .contact {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #0f172a, #1e40af);
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
 }
 
@@ -421,7 +425,7 @@ body {
 
 .form-input {
     padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;

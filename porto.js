@@ -22,12 +22,75 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission
-function handleSubmit(event) {
-    event.preventDefault();
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    event.target.reset();
-}
+  function handleSubmit(e) {
+    e.preventDefault(); // stop normal submit
+    const form = e.target;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        alert("Thanks! Your message was sent.");
+        form.reset(); // clear form fields
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    }).catch(error => {
+      alert("Error submitting form");
+    });
+  }
+
+const phrases = [
+    "Let's Work Together ",         
+    "一起合作吧 ",                  
+    "Lass uns zusammenarbeiten ",   
+    "Ayo kita bekerja sama "        
+  ];
+
+  const el = document.getElementById("typewriter");
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isEndOfWordPause = false;
+
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      // PAUSE at end before deleting
+      isEndOfWordPause = true;
+      setTimeout(() => {
+        isDeleting = true;
+        isEndOfWordPause = false;
+        type();
+      }, 1000); // Full pause duration after typing the last letter
+      return;
+    }
+
+    if (isDeleting && charIndex === 0) {
+      // Move to next phrase after delete
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+
+    const updatedText = currentPhrase.substring(0, charIndex);
+    el.textContent = updatedText;
+
+    // Update character index
+    charIndex += isDeleting ? -1 : 1;
+
+    // Set next speed
+    const speed = isDeleting ? 50 : 100;
+    if (!isEndOfWordPause) {
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
 
 // Mobile menu toggle (placeholder for mobile menu functionality)
 function toggleMobileMenu() {
